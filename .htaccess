@@ -9,4 +9,7 @@
     Satisfy Any
 
 
-RedirectMatch 404 (.md)
+  Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
